@@ -1,0 +1,348 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  background-color: rgb(48, 48, 63);
+}
+* {
+  color: white;
+}
+
+.chip {
+  background: linear-gradient(90deg, #6b69f9 0%, #6f6eff 100%);
+  font-size: 11px;
+  line-height: 11px;
+  border-radius: 4px;
+  padding: 2px 11px 2px 8px;
+  height: fit-content;
+}
+
+.button {
+  height: 30px;
+  border-radius: 4px;
+  background-color: #6f6eff;
+  border: none;
+  padding: 0 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* header */
+
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.1);
+}
+.logo {
+  background-color: rgb(48, 50, 66);
+  padding: 19px 112px 9px 30px;
+}
+.navigation {
+  padding: 0px 45px 0px 55px;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+.navigation-links {
+  display: flex;
+  align-items: center;
+}
+.navigation-links_link {
+  opacity: 0.6;
+  font-size: 14px;
+  margin-right: 26px;
+  text-decoration: none;
+}
+.vertical-devider {
+  height: 24px;
+  border-right: 1px solid rgba(216, 216, 216, 0.1);
+  border-collapse: collapse;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-info_coin {
+  background-color: rgb(59, 60, 74);
+  font-size: 13px;
+  line-height: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  height: 24px;
+  padding: 0px 9px;
+  margin-right: 10px;
+}
+.user-info_coin__imaged-coin {
+  font-weight: bold;
+  padding: 0px 9px 0px 2px;
+}
+.user-info_coin__hours-text {
+  margin-left: 4px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.profile {
+  display: flex;
+  cursor: pointer;
+}
+.profile_avatar {
+  margin-left: 4px;
+  margin-right: 13px;
+}
+.profile_name {
+  font-size: 14px;
+  margin-right: 15px;
+}
+.profile_status {
+  margin-left: 3px;
+  display: flex;
+  align-items: center;
+  color: rgba(36, 203, 141, 1);
+}
+
+.profile-status__square {
+  background-color: rgba(36, 203, 141, 1);
+  width: 6px;
+  height: 6px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.profile .chip {
+  position: relative;
+  top: 6px;
+}
+
+.main {
+  height: calc(100% - 72px);
+  display: flex;
+}
+
+/* accordion */
+.left-bar {
+  padding: 30px 0;
+  width: 280px;
+  background-color: rgb(51, 53, 69);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 71px;
+}
+
+.accordion-menu {
+  width: 100%;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.06);
+  padding-bottom: 10px;
+}
+.accordion-menu_item {
+  margin-bottom: 10px;
+}
+
+.accordion-menu label {
+  font-size: 14px;
+  padding: 0px 30px;
+  letter-spacing: 1px;
+}
+.accordion-menu label:after {
+  display: none;
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 23px;
+  transform: rotate(180deg);
+  transition: 0.3s ease-in-out all;
+  background: transparent url(./public/icons/arrow.svg) no-repeat center center;
+}
+
+.accordion-menu label:hover {
+  cursor: pointer;
+}
+
+.accordion-menu label:hover:after {
+  display: unset;
+}
+.accordion-menu input:checked + label:after {
+  display: unset;
+  transform: rotate(0deg);
+}
+
+.accordion-menu input {
+  display: none;
+}
+
+.menu-item-body {
+  display: none;
+  padding-top: 18px;
+  padding-bottom: 8px;
+}
+
+.accordion-menu input:checked ~ .menu-item-body {
+  display: block;
+}
+
+.menu-item-body_item {
+  cursor: pointer;
+  fill: white;
+  opacity: 0.5;
+  font-size: 14px;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.menu-item-body_item:hover {
+  fill: #6868ff;
+  padding-left: 49px;
+  background-color: rgb(55, 57, 73);
+  border-left: 1px solid #6868ff;
+  border-right: 1px solid transparent;
+}
+
+.menu-item-body svg {
+  margin-right: 24px;
+  width: 18px;
+  height: 18px;
+}
+.menu-item-body path {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+
+.subscribe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+}
+.subscribe p {
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.subscribe-switcher {
+  position: relative;
+  width: 42px;
+  height: 22px;
+  -webkit-appearance: none;
+  outline: 1px solid rgba(216, 216, 216, 0.2);
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.subscribe-switcher:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 20px;
+  top: 3px;
+  left: 3px;
+  background: #fff;
+  transition: 0.5s;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.subscribe-switcher:checked::before {
+  background-color: #6f6eff;
+  left: 23px;
+}
+
+/* content */
+
+.main-content {
+  overflow: auto;
+  width: 100%;
+  margin-left: 280px;
+  padding: 40px 55px;
+}
+
+.content-block {
+  margin-bottom: 60px;
+}
+
+.content-block_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-header {
+  font-size: 22px;
+}
+.content-subheader {
+  font-size: 11px;
+  opacity: 0.4;
+}
+
+.arrow-button {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.content-button {
+  margin-right: 5px;
+}
+.content-body {
+  margin-top: 18px;
+  display: flex;
+}
+.content-body .content-card:last-child {
+  margin-right: 0;
+}
+.content-card {
+  width: 255px;
+  background-color: rgb(55, 56, 70);
+  margin-right: 10px;
+  border-radius: 6px;
+}
+.card-preview {
+  padding: 12px 15px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.card-info {
+  height: 68px;
+  padding: 10px 20px 10px 15px;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.1);
+}
+.card-info-header {
+  font-size: 16px;
+}
+.card-info-subheader {
+  opacity: 0.5;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.card-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 8px 15px;
+}
+.card-control button {
+  padding: 10px 18px;
+}
